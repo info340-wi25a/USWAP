@@ -8,4 +8,4 @@ Group Member 2: Shuban Burla
 
 Group Member 3: Alexander Huynh
 
-Group Member 4: Sam Clement
+Group Member 4: Samuel Clement
