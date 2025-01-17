@@ -48,19 +48,6 @@ header p {
   font-family: 'Irish grover';
 }
 
-.blue {
-  color: rgb(114, 114, 243);
-}
-
-.yellow {
-  color: rgb(255, 115, 115);
-}
-
-.green {
-  color: rgb(135, 255, 135);
-}
-
-
 main {
   max-width: 800px;
   margin: 2rem auto;
