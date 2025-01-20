@@ -42,7 +42,7 @@ header p {
   margin: 0.5rem 0 0;
 }
 
-#app-name {
+.app-name {
   color: #f9e6b6;
   font-size: 3rem;
   font-family: 'Irish grover';
@@ -84,10 +84,10 @@ footer {
   font-size: 0.9rem;
 }
 
-#references ul {
+.references ul {
   padding-left: 1.5rem;
 }
 
-#references ul li {
+.references ul li {
   margin: 0.5rem 0;
 }
