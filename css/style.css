@@ -21,6 +21,7 @@ a {
   text-decoration: none;
 }
 
+
 a:hover {
   text-decoration: underline;
 }
@@ -29,6 +30,13 @@ header {
   background-color: #4b2e83;
   color: #ffffff;
   padding: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.purchase-header {
+  background-color: #4b2e83;
+  color: #ffffff;
+  padding: 0 0 0 0;
   text-align: center;
 }
 
@@ -46,6 +54,15 @@ header p {
   color: #f9e6b6;
   font-size: 3rem;
   font-family: 'Irish grover';
+}
+
+.app-name a {
+  color: #f9e6b6;
+  text-decoration: none;
+}
+
+.app-name a:hover {
+  text-decoration: none;
 }
 
 main {
@@ -98,14 +115,77 @@ footer {
   gap: 1.5rem;
   margin-top: 2rem;
 }
+
+#purchase-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
 .card {
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
   text-align: center;
+  flex-grow: 1;
+}
+
+#form {
+  padding: 0.5rem;
+  height: 800px;
+  width: 30rem;
+}
+
+.product-image {
   width: 200px;
 }
+
+.product-name {
+  font-size: 1.5em;
+  margin: 0;
+  font-weight: lighter;
+}
+
+.price {
+  margin: 0;
+  font-size: 1em;
+  font-weight: bolder;
+  border-bottom: 2px solid #4b2e83;
+  padding-bottom: 0.5em;
+}
+
+#review {
+  height: 200px;
+}
+
+.confirm {
+  color:#f9e6b6;
+  background-color: #4b2e83;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 12px;
+  width: 8em;
+}
+
+.confirm:hover {
+  color:#f9e6b6;
+  background-color: #301d54;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 10px;
+  border-radius: 12px;
+  width: 8em;
+}
+
 .card a {
   display: block;
   text-decoration: none;
@@ -113,6 +193,17 @@ footer {
   font-weight: bold;
   margin-top: 1rem;
 }
+
 .card a:hover {
   text-decoration: underline;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
