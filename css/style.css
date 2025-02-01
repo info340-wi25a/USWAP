@@ -156,8 +156,26 @@ footer {
   padding-bottom: 0.5em;
 }
 
-#review {
-  height: 200px;
+#payment {
+  padding: 0.5rem;
+  width: 15em;
+  height: 300px;
+}
+
+.paybtn {
+  margin: 0.5em;
+  width: 200px;
+  padding: 0.5em;
+}
+
+.payimg {
+  width: 10em;
+  height: 3em;
+}
+
+.cc {
+  width: 3em;
+  height: 3em;
 }
 
 .confirm {
