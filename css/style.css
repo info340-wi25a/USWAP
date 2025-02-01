@@ -224,4 +224,397 @@ input[type=text], select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f8f8f8;
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  color: #4b2e83;
+  margin-top: 0;
+}
+
+a {
+  color: #85754d;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4b2e83; /* Adjust as needed */
+  padding: 10px 20px;
+  color: white;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  color: white;
+}
+
+
+header p {
+  font-size: 1.25rem;
+  margin: 0.5rem 0 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  gap: 10px; /* Adds spacing between buttons */
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: white; /* Button background */
+  color: #4B0082; /* Text color */
+  text-decoration: none;
+  border: 2px solid #4B0082; /* Border color */
+  border-radius: 15px; /* Rounded edges */
+  font-weight: bold;
+  transition: all 0.3s ease; /* Smooth effect */
+}
+
+nav ul li a:hover {
+  background-color: darkgoldenrod; /* Change background on hover */
+  color: white; /* Change text color on hover */
+}
+
+
+
+.app-name {
+  color: #f9e6b6;
+  font-size: 3rem;
+  font-family: 'Irish Grover';
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+section h2 {
+  border-bottom: 2px solid #4b2e83;
+  padding-bottom: 0.5rem;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  color: #555;
+}
+
+ul li {
+  margin: 0.5rem 0;
+}
+
+footer {
+  background-color: #4b2e83;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.references ul {
+  padding-left: 1.5rem;
+}
+
+.references ul li {
+  margin: 0.5rem 0;
+}
+
+/* Additional styles for USWAP item listings */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 10px;
+  padding: 10px;
+  max-width: 1200px;
+  margin: auto;
+}
+.container-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  gap: 20px; /* Adjust spacing between items */
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.item {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+}
+
+.item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.info {
+  padding: 15px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.price {
+  color: #4CAF50;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.header {
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #4b2e83;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+input, textarea, select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4b2e83;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #3a206b;
+}
+
+.sub-header {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #4b2e83;
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #e8e6f0;
+  border-radius: 5px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+footer {
+  background-color: #4b2e83;
+  color: white;
+  padding: 1px 0;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+}
+
+.footer-section {
+  flex: 1;
+  text-align: center;
+  padding: 5px 10px;
+  color: white;
+}
+
+.footer-section:first-child {
+  text-align: left;
+  color: white;
+}
+
+.footer-section:last-child {
+  text-align: center;
+}
+
+.social-media a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  text-decoration: underline;
+}
+
+.content-wrapper {
+  display: flex;
+  justify-content: center; /* Centers both elements horizontally */
+  align-items: flex-start; /* Aligns both elements at the top */
+  gap: 40px; /* Adjust space between search box and blurb */
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.listing-blurb {
+  flex: 1;
+  max-width: 450px;
+  font-size: 1rem;
+  color: #4b2e83;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: left;
+  margin-top: 0; /* Ensure it stays aligned */
+}
+.search-container {
+  width: 350px; /* Adjust width of the search form */
+}
+
+
+.content-wrapper {
+  display: flex;
+  justify-content: center; /* Ensures content stays centered */
+  align-items: flex-start; /* Aligns both at the top */
+  gap: 40px; /* Adds spacing between the form and blurb */
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.search-container {
+  flex: 1; /* Allows form to take available space */
+  max-width: 400px; /* Prevents it from stretching too wide */
+}
+
+.listing-blurb {
+  flex: 1; /* Allows blurb to take available space */
+  max-width: 450px; /* Prevents it from stretching too wide */
+  font-size: 1rem;
+  color: #4b2e83;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+form label {
+  font-weight: bold;
+  font-size: 1rem; /* Optional: Adjust size if needed */
+  color: #333; /* Optional: Darker color for visibility */
+}
+
+/* Change the color of all links */
+a {
+  color: white; /* Change this to your preferred color */
+  text-decoration: none; /* Removes underline */
+}
+
+/* Change the color of links on hover */
+a:hover {
+  color: #f9e6b6; /* Light gold for hover effect */
+  text-decoration: underline;
+}
+
+/* If you want to target only the footer links */
+.footer-section a {
+  color: white; /* Change this to your preferred color */
+}
+
+.footer-section a:hover {
+  color: #f9e6b6; /* Change hover color */
+}
+
+.footer-section.social-media {
+  display: flex;
+  justify-content: center; /* Centers the icons */
+  gap: 10px; /* Adjusts spacing between icons */
+}
+
+.footer-section.social-media a {
+  display: inline-block;
+  margin: 0 10px; /* Adds spacing around each icon */
+}
+header {
+  display: flex;
+  justify-content: space-between; /* Adjusts alignment */
+  align-items: center;; /* Vertically centers elements */
+  padding: 0 20px; /* Adds padding */
+}
+
+header h1 {
+  margin: 10;
+  flex-grow: 1;
+  text-align: center; /* Centers "USWAP" */
+}
+
+button[type="submit"] {
+  width: 150px; /* Adjust the width */
+  height: 40px; /* Adjust the height */
+  font-size: 14px; /* Reduce text size */
+  padding: 5px 10px; /* Adjust padding */
+  border-radius: 15px;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+
