@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Sam Clement, Shuban Burla, Alex Chang, Alexander Huynh">
+  <meta name="description" content="Page for a given item on USWAP, showing item details.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>USWAP - Gaming Laptop Listing</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>USWAP</h1>
+    <nav>
+      <ul>
+        <li><a href="USWAPHomePage.html">Home</a></li>
+        <li><a href="USWAPBuyingPage.html">Buying</a></li>
+        <li><a href="USWAPListingPage.html">Listings</a></li>
+        <li><a href="USWAPAddItem.html">Add Item</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Gaming Laptop - RTX 3080 / 32GB RAM / 1TB SSD</h2>
+      <p>Super fast, great for gaming and school. Free shipping!</p>
+    </section>
+
+    <div class="container">
+      <div class="image-gallery">
+        <div class="main-image">
+          <img src="img/GamingLap.jpeg" alt="Gaming Laptop" class="product-image">
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h2>Gaming Laptop</h2>
+        <p><strong>Condition:</strong> Like New</p>
+        <p>Barely used, just realized I don’t need this much power. Runs smooth with the RTX 3080, 32GB RAM, and a 1TB SSD.</p>
+        <p><strong>Price:</strong> <span class="price">$1,899.00</span></p>
+        <p><strong>Seller:</strong> <a href="#">MisterInfo</a> (90% Positive Feedback)</p>
+        <p><strong>Quantity:</strong> Only 1 left!</p>
+
+        <div class="button-container">
+          <button class="confirm">Buy It Now</button>
+          <button class="confirm">Add to Cart</button>
+          <button class="confirm">Add to Watchlist</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <section class="review-section">
+    <h2>Seller Reviews</h2>
+    <form action="#" method="GET">
+      <label for="review-keyword">Keyword:</label>
+      <input type="text" id="review-keyword" name="review-keyword" placeholder="Search reviews...">
+      
+      <label for="rating">Filter by Rating:</label>
+      <select id="rating" name="rating">
+        <option value="all">All Ratings</option>
+        <option value="5">★★★★★ (5 Stars)</option>
+        <option value="4">★★★★☆ (4 Stars)</option>
+        <option value="3">★★★☆☆ (3 Stars)</option>
+        <option value="2">★★☆☆☆ (2 Stars)</option>
+        <option value="1">★☆☆☆☆ (1 Star)</option>
+      </select>
+
+      <button type="submit">Search Reviews</button>
+    </form>
+
+    <div class="review-results">
+      <h3>Recent Reviews</h3>
+      <p><strong>⭐⭐⭐⭐⭐</strong> - "This seller is reputable!" <em>- Bob K.</em></p>
+      <p><strong>⭐⭐⭐⭐</strong> - "My favorite seller." <em>- John M.</em></p>
+      <p><strong>★★★☆☆</strong> - "Sells good stuff but not the best packaging." <em>- Kevin S.</em></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-section">
+      <p>&copy; 2025 USWAP</p>
+    </div>
+    <div class="footer-section">
+      <p>Contact us at: <a href="mailto:info@USWAP.com"><strong>info@USWAP.com</strong></a></p>
+    </div>
+    <div class="footer-section">
+      <a href="USWAPHomePage.html">About Us</a>
+    </div>
+  </footer>
+</body>
+</html>
