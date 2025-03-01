@@ -1,8 +1,11 @@
-# React + Vite
+# INFO 340 Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains code for an interactive information web app, created for the _Client-Side Web Development_ course at the UW iSchool.
 
-Currently, two official plugins are available:
+Group Member 1: Alex Chang
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Group Member 2: Shuban Burla
+
+Group Member 3: Alexander Huynh
+
+Group Member 4: Sam Clement
