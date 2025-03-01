@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router';
 
@@ -18,5 +17,3 @@ const Header = () => (
 );
 
 export default Header;
-
-
