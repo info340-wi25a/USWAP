@@ -288,16 +288,16 @@ nav ul li {
 
 nav ul li a {
   display: inline-block;
-  padding: 15px 25px; /* Uniform padding for all buttons */
-  background-color: white; /* Button background */
-  color: #4B0082; /* Text color */
+  padding: 15px 25px;
+  background-color: white;
+  color: #4B0082; 
   text-decoration: none;
-  border: 2px solid #4B0082; /* Border color */
-  border-radius: 15px; /* Rounded edges */
+  border: 2px solid #4B0082;
+  border-radius: 15px; 
   font-weight: bold;
-  transition: all 0.3s ease; /* Smooth effect */
-  width: 150px; /* Set a fixed width for uniformity */
-  text-align: center; /* Center text */
+  transition: all 0.3s ease;
+  width: 150px;
+  text-align: center;
 }
 
 nav ul li a:hover {
