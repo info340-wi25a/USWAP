@@ -288,7 +288,7 @@ nav ul li {
 
 nav ul li a {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 15px 25px; /* Uniform padding for all buttons */
   background-color: white; /* Button background */
   color: #4B0082; /* Text color */
   text-decoration: none;
@@ -296,11 +296,13 @@ nav ul li a {
   border-radius: 15px; /* Rounded edges */
   font-weight: bold;
   transition: all 0.3s ease; /* Smooth effect */
+  width: 150px; /* Set a fixed width for uniformity */
+  text-align: center; /* Center text */
 }
 
 nav ul li a:hover {
-  background-color: darkgoldenrod; /* Change background on hover */
-  color: white; /* Change text color on hover */
+  background-color: darkgoldenrod;
+  color: white;
 }
 
 
