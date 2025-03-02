@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../index.css'; // Ensure styles are correctly linked
+import '../index.css';
 
 const faqData = [
   { question: "How do I list an item?", answer: "Click on 'Add Item' in the navigation bar and fill in the required details." },

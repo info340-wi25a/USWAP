@@ -3,49 +3,102 @@
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Sam Clement, Shuban Burla, Alex Chang, Alexander Huynh">
-  <meta name="description" content="Home page for USWAP">
+  <meta name="description" content="USWAP - A secure and convenient marketplace for UW students to buy, sell, and trade items.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>USWAP - Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <!-- Consider changing the class to h1 and deleting the current h1? -->
-    <h1>HyperLocal UW Student Ebay</h1>
-    <p class="app-name">USWAP</p>
-    <p>A secure and convenient marketplace for UW students to buy, sell, and trade items.</p>
+  <!-- Accessible Header -->
+  <header role="banner">
+    <div class="logo-container">
+      <img src="img/USWAP_logo.png" alt="USWAP logo" class="logo">
+    </div>
+    <h1>USWAP - HyperLocal UW Student Marketplace</h1>
+    <p class="subtitle">A secure and convenient platform for UW students to buy, sell, and trade items.</p>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main Navigation">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="browse.html" class="nav-link">Browse Items</a></li>
+        <li><a href="sell.html" class="nav-link">Sell an Item</a></li>
+        <li><a href="listings.html" class="nav-link">My Listings</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section>
+  <!-- Main Content -->
+  <main role="main">
+    <section class="intro">
       <h2>Welcome to USWAP</h2>
-      <p>
-        Connect with other UW students to exchange books, furniture, gadgets, and more in a safe and easy-to-use platform.
-      </p>
+      <p>Connect with other UW students to exchange books, furniture, gadgets, and more in a safe and easy-to-use platform.</p>
     </section>
 
+    <!-- Feature Cards -->
     <section class="card-container">
       <div class="card">
         <h3>Browse Items</h3>
         <p>Find what you need from fellow Huskies.</p>
-        <a href="browse.html">Explore</a>
+        <a href="browse.html" class="button">Explore</a>
       </div>
       <div class="card">
         <h3>Sell an Item</h3>
         <p>List your items and connect with buyers.</p>
-        <a href="sell.html">Start Selling</a>
+        <a href="sell.html" class="button">Start Selling</a>
       </div>
       <div class="card">
         <h3>My Listings</h3>
         <p>Manage the items you've posted.</p>
-        <a href="listings.html">View Listings</a>
+        <a href="listings.html" class="button">View Listings</a>
+      </div>
+    </section>
+
+    <!-- Expandable FAQ Section -->
+    <section class="faq-container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(0)">
+          How do I list an item? <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer" role="region" aria-hidden="true">
+          <p>Click on 'Sell an Item' in the navigation bar and fill in the required details.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(1)">
+          Is this marketplace only for UW students? <span class="faq-icon">▼</span>
+        </button>
+        <div class="faq-answer" role="region" aria-hidden="true">
+          <p>Yes, USWAP is exclusive to University of Washington students.</p>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <p>Created by INFO 340 Group-AB6 | University of Washington</p>
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <p>&copy; 2025 USWAP | INFO 340 Group-AB6 | University of Washington</p>
+    <p>Contact us at: <a href="mailto:info@USWAP.com">info@USWAP.com</a></p>
   </footer>
+
+  <!-- FAQ Toggle Script -->
+  <script>
+    function toggleFAQ(index) {
+      const questions = document.querySelectorAll(".faq-question");
+      const answers = document.querySelectorAll(".faq-answer");
+
+      answers[index].classList.toggle("show");
+      questions[index].setAttribute("aria-expanded", answers[index].classList.contains("show"));
+      answers[index].setAttribute("aria-hidden", !answers[index].classList.contains("show"));
+    }
+  </script>
+
 </body>
 </html>
