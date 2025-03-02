@@ -511,8 +511,17 @@ footer {
   max-width: 1000px;
   margin: auto;
   padding: 20px;
+  flex-direction: column;
 }
-
+ .content-wr {
+  display: flex;
+  justify-content: center; /* Centers both elements horizontally */
+  align-items: flex-start; /* Aligns both elements at the top */
+  gap: 40px; /* Adjust space between search box and blurb */
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+ }
 .listing-blurb {
   flex: 1;
   max-width: 450px;
@@ -521,7 +530,7 @@ footer {
   background-color: #f8f8f8;
   padding: 15px;
   border-radius: 5px;
-  text-align: left;
+  text-align: center;
   margin-top: 0; /* Ensure it stays aligned */
 }
 .search-container {
@@ -537,22 +546,15 @@ footer {
   max-width: 1500px;
   margin: auto;
   padding: 20px;
+  flex-direction: column;
 }
 
 .search-container {
   flex: 3; /* Allows form to take available space */
   max-width: 400px; /* Prevents it from stretching too wide */
-}
-
-.listing-blurb {
-  flex: 1; /* Allows blurb to take available space */
-  max-width: 450px; /* Prevents it from stretching too wide */
-  font-size: 1rem;
-  color: #4b2e83;
-  background-color: #f8f8f8;
-  padding: 15px;
-  border-radius: 5px;
-  text-align: left;
+  align-items: center ;
+  width: 100%;
+  margin: 0 auto;
 }
 
 form label {
@@ -674,6 +676,9 @@ nav ul li a:hover {
       grid-template-columns: repeat(2, 1fr); /* 2 items per row */
   }
 
+  .listing-blurb {
+    max-width: 100%;
+  }
   .form-container {
       width: 80%;
       margin: auto;
@@ -683,6 +688,7 @@ nav ul li a:hover {
       display: flex;
       justify-content: center;
       gap: 15px;
+      width: 100%
   }
 
   nav ul li {

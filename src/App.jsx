@@ -3,20 +3,8 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router';
 import Header from './components/Header';
 import Footer from './components/Footer';
-<<<<<<< HEAD
 import ListingPage from './components/ListingPage';
 import AddItem from './components/AddItem';
-
-
-
-/*const App = () => (
-  <div>
-    <Header />
-   
-    <Footer />
-  </div>
-);
-*/
 
 function App(props) {
   return (
@@ -34,26 +22,3 @@ function App(props) {
   );
 };
 export default App;
-
-
-
-
-
-
-
-
-
-=======
-import "./index.css";
-
-
-export default function App() {
-  return (
-    <>
-      <Header />
-      <FAQ />
-      <Footer />
-    </>
-  );
-}
->>>>>>> f8b149126813ba3e288ff613c1f6f037fb8c5ca6

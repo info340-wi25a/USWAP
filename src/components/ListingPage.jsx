@@ -33,6 +33,7 @@ const ListingPage = () => {
   return (
     <div className="content-wrapper">
       {/* 🔹 Listing Blurb */}
+      <div className="content-wr">
       <div class="listing-blurb">
         <h3>About the Listing Page</h3>
         <p>Browse a variety of items listed by college students just like you. Whether you're looking for textbooks, furniture, or electronics, our listing page helps you find what you need at great prices.</p>
@@ -88,6 +89,7 @@ const ListingPage = () => {
 
           <button type="button" onClick={() => console.log("Filters Applied")}>Search</button>
         </form>
+      </div>
       </div>
  {/* 🔹 Filtered Listings */}
  <div className="container-box">
