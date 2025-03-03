@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const Header = () => (
   <header>
-    <img src="./project-draft/img/USWAP_logo.png" alt="USWAP Logo" className="logo" />
+    <img src="img/USWAP_logo.png" alt="USWAP Logo" className="logo" />
     <h1>USWAP</h1>
     <nav>
       <ul>

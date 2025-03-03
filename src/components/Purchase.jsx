@@ -8,7 +8,7 @@ const miniFridge = {
     title: "Dorm Mini Fridge",
     price: 80,
     category: "electronics",
-    image: "/project-draft/img/Dorm_mini.jpg",
+    image: "/img/Dorm_mini.jpg",
     description: "Compact dorm mini fridge, perfect for small spaces."
 };
 

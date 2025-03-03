@@ -3,16 +3,16 @@ import { Link } from "react-router";
 
 // Sample hardcoded data for items
 const itemsData = [
-  { id: 1, title: "Dorm Mini Fridge", price: 80, category: "electronics", condition: "Good", image: "./project-draft/img/Dorm_mini.jpg"},
-  { id: 2, title: "Gaming Laptop", price: 500, category: "electronics", condition: "Like New", image: "./project-draft/img/GamingLap.jpeg"},
-  { id: 3, title: "Microwave Oven", price: 50, category: "electronics", condition: "New", image: "./project-draft/img/Microwave.jpg"},
-  { id: 4, title: "Study Desk", price: 120, category: "furniture", condition: "Fair", image: "./project-draft/img/Desk.jpg" },
-  { id: 5, title: "Noise-Canceling Headphones", price: 150, category: "electronics",  condition: "New", image: "./project-draft/img/Headphones.jpg"},
-  { id: 6, title: "Used Textbooks", price: 20, category: "books",  condition: "Fair", image: "./project-draft/img/Textbook.jpg"},
-  { id: 7, title: "Coffee Maker", price: 35, category: "other",  condition: "Good", image: "./project-draft/img/CoffeeMaker.jpeg" },
-  { id: 8, title: "Pillows", price: 15, category: "other",  condition: "New", image: "./project-draft/img/Pillow.jpg"},
-  { id: 9, title: "Storage Bins", price: 10, category: "other",  condition: "Fair", image: "./project-draft/img/StorageBin.jpg"},
-  { id: 10, title: "Long-sleeve shirt", price: 20, category: "clothing", condition: "Good", image: "./project-draft/img/Shirt.jpg"}
+  { id: 1, title: "Dorm Mini Fridge", price: 80, category: "electronics", condition: "Good", image: "img/Dorm_mini.jpg"},
+  { id: 2, title: "Gaming Laptop", price: 500, category: "electronics", condition: "Like New", image: "img/GamingLap.jpeg"},
+  { id: 3, title: "Microwave Oven", price: 50, category: "electronics", condition: "New", image: "img/Microwave.jpg"},
+  { id: 4, title: "Study Desk", price: 120, category: "furniture", condition: "Fair", image: "img/Desk.jpg" },
+  { id: 5, title: "Noise-Canceling Headphones", price: 150, category: "electronics",  condition: "New", image: "img/Headphones.jpg"},
+  { id: 6, title: "Used Textbooks", price: 20, category: "books",  condition: "Fair", image: "img/Textbook.jpg"},
+  { id: 7, title: "Coffee Maker", price: 35, category: "other",  condition: "Good", image: "img/CoffeeMaker.jpeg" },
+  { id: 8, title: "Pillows", price: 15, category: "other",  condition: "New", image: "img/Pillow.jpg"},
+  { id: 9, title: "Storage Bins", price: 10, category: "other",  condition: "Fair", image: "img/StorageBin.jpg"},
+  { id: 10, title: "Long-sleeve shirt", price: 20, category: "clothing", condition: "Good", image: "img/Shirt.jpg"}
 ];
 
 const ListingPage = () => {
