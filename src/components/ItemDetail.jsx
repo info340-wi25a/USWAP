@@ -47,6 +47,7 @@ const ItemDetail = () => {
                         <p className="item-description">{item.description}</p>
 
                         {/* 🔹 "Add to Cart" Button - Now Works Properly! */}
+                        {/* 🔹 "Add to Cart" Button */}
                         <button onClick={handleAddToCart} className="confirm">
                             Add to Cart
                         </button>
@@ -56,6 +57,9 @@ const ItemDetail = () => {
 
             {/* 🔹 Additional Item Details */}
             <div className="listing-blurb">
+
+            <div className="purchase-blurb">
+
                 <h2>About This Item:</h2>
                 <p>Use this page to view detailed information about an item. If you're interested in purchasing, simply click the "Add to Cart" button to proceed.</p>
             </div>

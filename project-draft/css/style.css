@@ -105,6 +105,7 @@ ul li {
   margin-top: 2rem;
 }
 
+/* fix this */
 #purchase-container {
   display: flex;
   justify-content: center;
@@ -145,6 +146,7 @@ ul li {
   padding-bottom: 0.5em;
 }
 
+/* fix this */
 #payment {
   padding: 0.5rem;
   width: 15em;
@@ -277,19 +279,21 @@ nav ul li {
 
 nav ul li a {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: white; /* Button background */
-  color: #4B0082; /* Text color */
+  padding: 15px 25px;
+  background-color: white;
+  color: #4B0082; 
   text-decoration: none;
-  border: 2px solid #4B0082; /* Border color */
-  border-radius: 15px; /* Rounded edges */
+  border: 2px solid #4B0082;
+  border-radius: 15px; 
   font-weight: bold;
-  transition: all 0.3s ease; /* Smooth effect */
+  transition: all 0.3s ease;
+  width: 150px;
+  text-align: center;
 }
 
 nav ul li a:hover {
-  background-color: darkgoldenrod; /* Change background on hover */
-  color: white; /* Change text color on hover */
+  background-color: darkgoldenrod;
+  color: white;
 }
 
 
@@ -352,8 +356,13 @@ ul li {
   grid-template-columns: repeat(3, 1fr); /* 3 items per row */
   gap: 20px; /* Adjust spacing between items */
   padding: 20px;
+<<<<<<< HEAD
   max-width: 1000px;
   margin: auto;
+=======
+  max-width: 500px;
+  margin: auto auto 50px;
+>>>>>>> f34b67d717c92670e68dda21329203e790ce1861
 }
 
 .item {
@@ -407,8 +416,6 @@ form {
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  max-width: 500px;
-
 }
 
 input, textarea, select {
@@ -498,11 +505,14 @@ footer {
 }
 
 .form-card {
-  display: flex; /* Use flexbox to align items horizontally */
-  justify-content: space-between; /* Optionally space them out or use 'center' for equal spacing */
-  align-items: flex-start; /* Align items to the top of the container */
-  gap: 20px; /* Adds some space between the form and the card */
-  padding: 20px; /* Optional: add padding to the container */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .purchase-card {
@@ -511,9 +521,40 @@ footer {
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  width: 250px;
+  flex-grow: 1; /* Allows the card to expand */
+   /* Prevents it from stretching too much */
   padding: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.purchase-blurb {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 15px;
+  margin: auto auto 50px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.item-card {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  gap: 20px; /* Space between items */
+  padding: 20px;
+}
+
+.purchase-form {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: stretch;
+  gap: 20px; /* Space between items */
+  width: 100%;
 }
 
  .content-wr {
@@ -699,6 +740,12 @@ nav ul li a:hover {
 .sellers-info {
   color: #333;
 }
+
+.item-image {
+  width: 200px;
+  margin: auto;
+  padding: 20px;
+}
 /* Tablet View (600px and above) */
 @media screen and (min-width: 600px) {
   .header-nav {
@@ -744,6 +791,25 @@ nav ul li a:hover {
 
   nav ul li {
       display: inline-block;
+  }
+
+  .form-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    width: 100%; /* Allows children to expand */
+    margin: 0 auto;
+  }
+
+  .purchase-card {
+    width: 50%;
+  }
+
+  .item-image {
+    max-width: 600px;
   }
 }
 
