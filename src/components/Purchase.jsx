@@ -42,7 +42,6 @@ function PurchasingPage() {
                     <p>Our marketplace makes transactions simple and secure, helping students find affordable items quickly.</p>
                 </div>
             </div>
-            <Footer />
         </div>
     );
 }

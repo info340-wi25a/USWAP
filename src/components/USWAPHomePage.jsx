@@ -33,7 +33,6 @@ const USWAPHomePage = () => {
 
         <FAQ />
       </main>
-      <Footer />
     </div>
   );
 };

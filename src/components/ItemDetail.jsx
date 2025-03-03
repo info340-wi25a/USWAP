@@ -64,8 +64,7 @@ const ItemDetail = () => {
                 <p>Use this page to view detailed information about an item. If you're interested in purchasing, simply click the "Add to Cart" button to proceed.</p>
             </div>
 
-            {/* 🔹 Footer */}
-            <Footer />
+            </div>
         </div>
     );
 };

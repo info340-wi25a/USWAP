@@ -356,13 +356,8 @@ ul li {
   grid-template-columns: repeat(3, 1fr); /* 3 items per row */
   gap: 20px; /* Adjust spacing between items */
   padding: 20px;
-<<<<<<< HEAD
   max-width: 1000px;
   margin: auto;
-=======
-  max-width: 500px;
-  margin: auto auto 50px;
->>>>>>> f34b67d717c92670e68dda21329203e790ce1861
 }
 
 .item {

@@ -30,7 +30,6 @@ function AddItem() {
           <AddItemForm />
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

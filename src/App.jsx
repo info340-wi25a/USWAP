@@ -5,13 +5,16 @@ import Footer from './components/Footer';
 import ListingPage from './components/ListingPage';
 import AddItem from './components/AddItem';
 import Purchase from './components/Purchase';
-import ItemDetail from "./components/ItemDetail"; // Import the details page
+import ItemDetail from "./components/ItemDetail";
+import USWAPHomePage from "./components/USWAPHomePage"; // ✅ Import your homepage component
+
+
 function App(props) {
   return (
         <div>
     <Header />
     <Routes>
-      <Route path="/" element={<h2>Welcome to USWAP</h2>} />
+    <Route path="/" element={<USWAPHomePage />} />
       <Route path="/purchase" element={<Purchase />} />
       <Route path="/listings" element={<ListingPage items={props.items} />} />
       <Route path="/add-item" element={<AddItem />} />
