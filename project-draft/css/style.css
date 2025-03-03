@@ -290,19 +290,21 @@ nav ul li {
 
 nav ul li a {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: white; /* Button background */
-  color: #4B0082; /* Text color */
+  padding: 15px 25px;
+  background-color: white;
+  color: #4B0082; 
   text-decoration: none;
-  border: 2px solid #4B0082; /* Border color */
-  border-radius: 15px; /* Rounded edges */
+  border: 2px solid #4B0082;
+  border-radius: 15px; 
   font-weight: bold;
-  transition: all 0.3s ease; /* Smooth effect */
+  transition: all 0.3s ease;
+  width: 150px;
+  text-align: center;
 }
 
 nav ul li a:hover {
-  background-color: darkgoldenrod; /* Change background on hover */
-  color: white; /* Change text color on hover */
+  background-color: darkgoldenrod;
+  color: white;
 }
 
 
