@@ -374,7 +374,7 @@ footer {
   gap: 20px; /* Adjust spacing between items */
   padding: 20px;
   max-width: 500px;
-  margin: auto;
+  margin: auto auto 50px;
 }
 
 .item {
@@ -547,7 +547,7 @@ footer {
   flex-direction: column;
   flex-grow: 1;
   padding: 15px;
-  margin: auto;
+  margin: auto auto 50px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 

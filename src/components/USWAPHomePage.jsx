@@ -7,7 +7,6 @@ import FAQ from './FAQ';
 const USWAPHomePage = () => {
   return (
     <div className="home-page">
-      <Header />
       <main>
         <section className="intro">
           <h2>Welcome to USWAP</h2>
