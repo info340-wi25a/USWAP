@@ -8,7 +8,6 @@ const Header = () => (
     <nav>
       <ul>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/purchase">Buying</Link></li>
         <li><Link to="/listings">Listings</Link></li>
         <li><Link to="/add-item">Add Item</Link></li>
       </ul>

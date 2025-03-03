@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 function AddItemForm() {
   const [formData, setFormData] = useState({
@@ -12,6 +12,7 @@ function AddItemForm() {
   });
 
   const [imagePreview, setImagePreview] = useState(null);
+  const fileInputRef = useRef(null); // Create a ref for the file input
 
   // Handles form input changes
   const handleChange = (e) => {
@@ -33,6 +34,8 @@ function AddItemForm() {
     e.preventDefault();
     console.log('Item Submitted:', formData);
     alert('Item added successfully!');
+
+    // Reset the form fields
     setFormData({
       title: '',
       price: '',
@@ -42,7 +45,13 @@ function AddItemForm() {
       contact: '',
       image: null
     });
+
     setImagePreview(null);
+
+    // Reset file input manually
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
   };
 
   return (
@@ -67,7 +76,7 @@ function AddItemForm() {
         </select>
 
         <label htmlFor="image">Upload Image:</label>
-        <input type="file" id="image" name="image" accept="image/*" onChange={handleImageChange} required />
+        <input type="file" id="image" name="image" accept="image/*" ref={fileInputRef} onChange={handleImageChange} required />
         {imagePreview && <img src={imagePreview} alt="Preview" style={{ width: '100%', maxHeight: '200px', marginTop: '10px', borderRadius: '5px' }} />}
 
         <label htmlFor="category">Category:</label>

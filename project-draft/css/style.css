@@ -33,12 +33,7 @@ header {
   text-align: center;
 }
 
-.purchase-header {
-  background-color: #4b2e83;
-  color: #ffffff;
-  padding: 0 0 0 0;
-  text-align: center;
-}
+
 
 header h1 {
   font-size: 2.5rem;
@@ -93,13 +88,7 @@ ul li {
   margin: 0.5rem 0;
 }
 
-footer {
-  background-color: #4b2e83;
-  color: #ffffff;
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-}
+
 
 .references ul {
   padding-left: 1.5rem;
@@ -339,13 +328,7 @@ ul li {
   margin: 0.5rem 0;
 }
 
-footer {
-  background-color: #4b2e83;
-  color: #ffffff;
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-}
+
 
 .references ul {
   padding-left: 1.5rem;
@@ -369,7 +352,7 @@ footer {
   grid-template-columns: repeat(3, 1fr); /* 3 items per row */
   gap: 20px; /* Adjust spacing between items */
   padding: 20px;
-  max-width: 500px;
+  max-width: 1000px;
   margin: auto;
 }
 
@@ -557,6 +540,28 @@ footer {
   width: 500px; /* Adjust width of the search form */
 }
 
+.listing-info {
+  flex: 1;
+  max-width: 200%;
+  padding-right: 20px;
+  font-size: 1rem;
+  color: #4b2e83;
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container-box p {
+  color: #000435; /* Red color to make it noticeable */
+  font-size: 18px; /* Slightly larger text */
+  font-weight: bold; /* Make it bold */
+  text-align: center; /* Center it */
+  margin-top: 20px; /* Add space above */
+  padding: 10px;
+  background-color: #ff4d4d; 
+  border-radius: 5px; /* Rounded corners */
+}
 
 .content-wrapper {
   display: flex;
@@ -575,6 +580,8 @@ footer {
   align-items: center ;
   width: 100%;
   margin: 0 auto;
+  margin-bottom: 10px; /* Adjust as needed */
+  padding-bottom: 10px;
 }
 
 form label {
@@ -604,16 +611,7 @@ a:hover {
   color: #f9e6b6; /* Change hover color */
 }
 
-.footer-section.social-media {
-  display: flex;
-  justify-content: center; /* Centers the icons */
-  gap: 10px; /* Adjusts spacing between icons */
-}
 
-.footer-section.social-media a {
-  display: inline-block;
-  margin: 0 10px; /* Adds spacing around each icon */
-}
 header {
   display: flex;
   justify-content: space-between; /* Adjusts alignment */
@@ -667,6 +665,17 @@ h1 {
   margin: 0;
 }
 
+.form-container {
+  flex: 1;
+  max-width: 800px;
+  background: #fff;
+  padding: 70px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-left: auto;
+  margin-right: 2rem;
+}
+
 nav ul {
   display: flex;
   list-style: none;
@@ -692,6 +701,28 @@ nav ul li a:hover {
 }
 /* Tablet View (600px and above) */
 @media screen and (min-width: 600px) {
+  .header-nav {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap properly */
+    justify-content: center; /* Keep buttons centered */
+    gap: 10px; /* Add spacing between buttons */
+  }
+
+  .header-nav a {
+    flex: 1 1 auto; /* Allow buttons to shrink and grow */
+    min-width: 120px; /* Prevent them from getting too small */
+    text-align: center;
+  }
+
+  .header-container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items properly */
+  }
+
+  .header-nav a {
+    padding: 8px 12px; /* Reduce padding */
+    font-size: 14px; /* Adjust text size */
+  }
   .container-box {
       grid-template-columns: repeat(2, 1fr); /* 2 items per row */
   }
@@ -716,10 +747,90 @@ nav ul li a:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .header-nav {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap properly */
+    justify-content: center; /* Keep buttons centered */
+    gap: 10px; /* Add spacing between buttons */
+  }
+
+  .header-nav a {
+    flex: 1 1 auto; /* Allow buttons to shrink and grow */
+    min-width: 120px; /* Prevent them from getting too small */
+    text-align: center;
+  }
+
+  .header-container {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items properly */
+  }
+
+  .header-nav a {
+    padding: 8px 12px; /* Reduce padding */
+    font-size: 14px; /* Adjust text size */
+  }
+  .search-container {
+    width: 100%; /* Make it take full width */
+    display: block; /* Prevent flexbox from squishing it */
+    margin-bottom: 20px; /* Add spacing below */
+  }
+  .container-box {
+    grid-template-columns: repeat(1, 1fr); /* 1 item per row on mobile */
+  }
+  .search-container form {
+    width: 100%;
+  }
+  .content-wrapper {
+    padding: 15px; /* Add spacing around content */
+  }
+
+  .listing-blurb {
+    width: 100%; /* Allow text to take full width */
+    text-align: center; /* Center text for better readability */
+  }
+  
+  .form-container {
+    width: 90%; /* Make the form take up full width */
+    padding: 20px; /* Add padding for spacing */
+  }
+
+  nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the nav items */
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 5px; /* Adds spacing between buttons */
+}
+
+.filter-box {
+    display: block; /* Ensures it's not squished in flexbox */
+    width: 100%; /* Takes full width on smaller screens */
+    margin: 10px 0;
+}
+
+.listing-items {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column layout for smaller screens */
+    gap: 10px;
+}
+}
+
+
 /* Desktop View (1024px and above) */
 @media screen and (min-width: 1024px) {
   .container-box {
-      grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row on tablets */
   }
 
   .header-container {
@@ -750,6 +861,17 @@ nav ul li a:hover {
       font-size: 20px;
       padding: 10px 20px;
   }
+  .container {
+    flex-direction: column; /* Stack sidebar and form */
+    align-items: center;
+  }
+
+  .sidebar {
+    width: 100%; /* Make sidebar full width */
+    text-align: center;
+    padding: 10px;
+  }
+
 }
 
 /* FAQ Section Styling */
