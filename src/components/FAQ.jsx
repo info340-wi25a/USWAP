@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../index.css';
+import 'project-draft/css/style.css';
 
 const faqData = [
   { question: "How do I list an item?", answer: "Click on 'Add Item' in the navigation bar and fill in the required details." },
