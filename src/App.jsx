@@ -6,12 +6,14 @@ import Footer from './components/Footer';
 import ListingPage from './components/ListingPage';
 import AddItem from './components/AddItem';
 import Purchase from './components/Purchase';
+import HomePage from './components/USWAPHomePage'
 
 function App(props) {
   return (
         <div>
     <Header />
     <Routes>
+      <Route path="/" element={<HomePage />} /> {}
       <Route path="/" element={<h2>Welcome to USWAP</h2>} />
       <Route path="/purchase" element={<Purchase />} />
       <Route path="/listings" element={<ListingPage items={props.items} />} />
