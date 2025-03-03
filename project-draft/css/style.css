@@ -428,8 +428,6 @@ form {
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  max-width: 500px;
-
 }
 
 input, textarea, select {
@@ -536,9 +534,20 @@ footer {
   display: flex;
   flex-direction: column;
   flex-grow: 1; /* Allows the card to expand */
-  min-width: 250px; /* Prevents it from getting too small */
-  max-width: 100%; /* Prevents it from stretching too much */
+   /* Prevents it from stretching too much */
   padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.purchase-blurb {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 15px;
+  margin: auto;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -555,10 +564,9 @@ footer {
   display: flex;
   flex-direction: column; /* Stack items vertically */
   justify-content: center; /* Center items vertically */
-  align-items: center; /* Center items horizontally */
+  align-items: stretch;
   gap: 20px; /* Space between items */
-  padding: 20px;
-  max-width: 100%;
+  width: 100%;
 }
 
  .content-wr {
@@ -718,6 +726,12 @@ nav ul li a:hover {
 .sellers-info {
   color: #333;
 }
+
+.item-image {
+  width: 200px;
+  margin: auto;
+  padding: 20px;
+}
 /* Tablet View (600px and above) */
 @media screen and (min-width: 600px) {
   .container-box {
@@ -745,25 +759,17 @@ nav ul li a:hover {
 
   .form-card {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: center;
     align-items: flex-start;
     gap: 20px;
     padding: 20px;
-    width: fit-content;
+    width: 100%; /* Allows children to expand */
     margin: 0 auto;
   }
 
   .purchase-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    width: 100%;
-    max-width: 100%;
-    padding: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 50%;
   }
 
   .item-image {
