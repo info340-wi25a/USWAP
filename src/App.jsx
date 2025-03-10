@@ -6,8 +6,17 @@ import ListingPage from './components/ListingPage';
 import AddItem from './components/AddItem';
 import Purchase from './components/Purchase';
 import ItemDetail from "./components/ItemDetail";
+import LoginPage from "./components/LoginPage";
 import USWAPHomePage from "./components/USWAPHomePage"; // ✅ Import your homepage component
+import SignupPage from "./components/SignupPage";
+import WishlistPage from "./components/WishlistPage";
+import PurchaseHistoryPage from "./components/PurchaseHistoryPage";
+import ForgotPasswordPage from "./components/ForgotPasswordPage";
 
+const Dashboard = () => {
+  const loggedInUser = localStorage.getItem("loggedInUser");
+  return loggedInUser ? <h2>Welcome, {loggedInUser}!</h2> : <Navigate to="/login" />;
+};
 
 function App(props) {
   return (
@@ -20,6 +29,12 @@ function App(props) {
       <Route path="/add-item" element={<AddItem />} />
       <Route path="*" element={<Navigate to="/" />} />
       <Route path="/item/:id" element={<ItemDetail />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/dashboard" element={<Dashboard />} />  
+      <Route path="/signup" element={<SignupPage />} />
+      <Route path="/wishlist" element={<WishlistPage />} /> 
+      <Route path="/purchase-history" element={<PurchaseHistoryPage />} />
+      <Route path="/forgot-password" element={<ForgotPasswordPage />} />
     </Routes>
     <Footer />
   </div>

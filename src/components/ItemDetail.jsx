@@ -26,9 +26,7 @@ const ItemDetail = () => {
     }
 
     const handleAddToCart = () => {
-        if (item.id) {
-            navigate(`/purchase`);
-        }
+        navigate(`/purchase`, { state: { item } }); // ✅ Pass item data
     };
 
     return (

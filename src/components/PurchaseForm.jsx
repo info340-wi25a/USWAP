@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function PurchaseForm() {
+function PurchaseForm({ item }) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -11,28 +12,30 @@ function PurchaseForm() {
     additionalNotes: ''
   });
 
+  const navigate = useNavigate();
+
   // Handles form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handles form submission
+  // Handles form submission (Confirm Purchase)
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Purchase Submitted:', formData);
-    alert('Purchase request submitted successfully! Check your email for details.');
 
-    // Reset form
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      paymentMethod: 'cash',
-      deliveryOption: 'pickup',
-      shippingAddress: '',
-      additionalNotes: ''
-    });
+    // Save purchased item in localStorage
+    let purchasedItems = JSON.parse(localStorage.getItem("purchasedItems")) || [];
+
+    if (item && !purchasedItems.some(purchasedItem => purchasedItem.id === item.id)) {
+      purchasedItems.push(item);
+      localStorage.setItem("purchasedItems", JSON.stringify(purchasedItems));
+    }
+
+    alert(`${item?.title} has been purchased!`);
+
+    // Redirect to Purchase History
+    navigate("/purchase-history");
   };
 
   return (
@@ -78,7 +81,7 @@ function PurchaseForm() {
         <textarea id="additionalNotes" name="additionalNotes" rows="4" value={formData.additionalNotes} onChange={handleChange}></textarea>
 
         <div className="button-container">
-          <button type="submit">Submit Purchase</button>
+          <button type="submit">Confirm Purchase</button>
         </div>
       </form>
     </div>
