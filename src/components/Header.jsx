@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 
-const Header = ({ loggedInUser, handleLogout }) => {
+const Header = () => {
   return (
     <header>
       <Navbar expand="lg" style={{ backgroundColor: "#4B2E83" }} variant="dark" className="shadow-sm">
@@ -33,16 +33,9 @@ const Header = ({ loggedInUser, handleLogout }) => {
               <Button as={Link} to="/wishlist" className="uw-button">
                 Wishlist
               </Button>
-
-              {loggedInUser ? (
-                <Button onClick={handleLogout} className="uw-button">
-                  Logout
-                </Button>
-              ) : (
                 <Button as={Link} to="/login" className="uw-button">
                   Login
                 </Button>
-              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

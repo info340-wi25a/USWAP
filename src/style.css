@@ -412,6 +412,8 @@ button[type="submit"] {
 .wishlist-item img {
   width: 150px;
   height: 150px;
+  width: 150px;
+  height: 150px;
   border-radius: 8px;
   object-fit: cover;
   margin-right: 15px;
@@ -420,8 +422,10 @@ button[type="submit"] {
 .wishlist-item span {
   flex-grow: 1;
   font-size: 20px;
+  font-size: 20px;
   font-weight: bold;
   text-align: left;
+  
 }
 
 .wishlist-item button {
@@ -486,6 +490,8 @@ button[type="submit"] {
 .purchase-item img {
   width: 150px;
   height: 150px;
+  width: 150px;
+  height: 150px;
   border-radius: 8px;
   object-fit: cover;
   margin-right: 15px;
@@ -493,6 +499,7 @@ button[type="submit"] {
 
 .purchase-item span {
   flex-grow: 1;
+  font-size: 20px;
   font-size: 20px;
   font-weight: bold;
   text-align: left;

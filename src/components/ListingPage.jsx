@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom"; // ✅ Fixed import (use react-router-dom)
+import { Link } from "react-router";
 
+// Sample hardcoded data for items
 const itemsData = [
   { id: 1, title: "Dorm Mini Fridge", price: 80, category: "electronics", condition: "Good", image: "img/Dorm_mini.jpg"},
   { id: 2, title: "Gaming Laptop", price: 500, category: "electronics", condition: "Like New", image: "img/GamingLap.jpeg"},
@@ -20,7 +21,6 @@ const ListingPage = () => {
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
 
-  // Function to add an item to the wishlist
   const addToWishlist = (item) => {
     let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
     
@@ -28,8 +28,10 @@ const ListingPage = () => {
       wishlist.push(item);
       localStorage.setItem("wishlist", JSON.stringify(wishlist));
       alert(`${item.title} added to wishlist!`);
+      window.location.href = "/wishlist";
     } else {
       alert(`${item.title} is already in your wishlist!`);
+      window.location.href = "/wishlist";
     }
   };
 
@@ -45,6 +47,17 @@ const ListingPage = () => {
 
   return (
     <div className="content-wrapper">
+      {/* 🔹 Listing Blurb */}
+      <div className="content-wr">
+      <div class="listing-blurb">
+        <h3>About the Listing Page</h3>
+        <p>Browse a variety of items listed by college students just like you. Whether you're looking for textbooks, furniture, or electronics, our listing page helps you find what you need at great prices.
+        Use the search and filter options to quickly locate items that fit your needs. Once you find an item, click on it and it will take you to the add to cart page. Once you decide to buy the item, you can buy it through buying page.
+        </p>
+        <p>Our platform is designed to make buying and selling easy and convenient for students. Listings are constantly updated, ensuring a fresh selection of items at affordable prices.
+        By using this marketplace, you're not only finding great deals but also contributing to a sustainable student community where resources are shared and reused.</p>
+      </div>
+      {/* 🔹 Search & Filter Form */}
       <div className="search-container">
         <form>
           <label htmlFor="search">Search for an item:</label>
@@ -71,6 +84,7 @@ const ListingPage = () => {
             <option value="books">Books</option>
             <option value="other">Other</option>
           </select>
+
           <label htmlFor="price-range">Price Range:</label>
           <input
             type="number"
@@ -89,25 +103,26 @@ const ListingPage = () => {
             onChange={(e) => setMaxPrice(e.target.value)}
           />
 
+          
         </form>
       </div>
-
-      {/* Filtered Listings */}
-      <div className="container-box">
+      </div>
+  {/* Filtered Listings */}
+ <div className="container-box">
         {filteredItems.length > 0 ? (
           filteredItems.map(item => (
             <div className="item" key={item.id}>
               <Link to={`/item/${item.id}`}>
                 <img src={item.image} alt={item.title} />
               </Link>
+              {/*<img src={item.image} alt={item.title} /> */}
               <div className="info">
                 <div className="title">{item.title}</div>
                 <div className="price">${item.price}</div>
                 <div className="condition">Condition: {item.condition}</div>
                 <button onClick={() => addToWishlist(item)} className="add-to-wishlist">
-                Add to Wishlist
-              </button>
-
+                  Add to Wishlist
+                </button>
               </div>
             </div>
           ))
@@ -115,8 +130,15 @@ const ListingPage = () => {
           <p>No items match your search criteria.</p>
         )}
       </div>
-    </div>
+
+
+      </div>
   );
 };
 
 export default ListingPage;
+
+
+
+    
+

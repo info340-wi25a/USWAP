@@ -4,7 +4,8 @@ const PurchaseHistoryPage = () => {
   const [purchasedItems, setPurchasedItems] = useState([]);
 
   useEffect(() => {
-    const storedPurchases = JSON.parse(localStorage.getItem("purchasedItems")) || [];
+  const storedPurchases = JSON.parse(localStorage.getItem("purchasedItems")) || [];
+  //const storedPurchases = JSON.parse(localStorage.clear()) || []
     setPurchasedItems(storedPurchases);
   }, []);
 
@@ -14,6 +15,7 @@ const PurchaseHistoryPage = () => {
       {purchasedItems.length === 0 ? (
         <p>You have not purchased any items yet.</p>
       ) : (
+        
         <ul className="purchase-items">
           {purchasedItems.map(item => (
             <li key={item.id} className="purchase-item">
