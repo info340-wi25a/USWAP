@@ -379,112 +379,6 @@ button[type="submit"] {
   margin: auto;
   padding: 20px;
 }
-/* Center the login form */
-.login-container {
-  width: 350px;
-  margin: 50px auto;
-  padding: 25px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-/* Header styling */
-.login-container h2 {
-  color: #4b2e83;
-  font-size: 26px;
-  margin-bottom: 20px;
-}
-
-/* Input fields */
-.login-container input {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: 0.3s ease-in-out;
-}
-
-.login-container input:focus {
-  border-color: #4b2e83;
-  outline: none;
-  box-shadow: 0 0 5px rgba(75, 46, 131, 0.5);
-}
-
-/* Login button */
-.login-container .login-btn {
-  width: 100%;
-  background-color: #4b2e83; /* ✅ Changed to purple */
-  color: white;
-  font-size: 18px;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.login-container .login-btn:hover {
-  background-color: #371f61; /* ✅ Darker purple on hover */
-}
-
-/* Create account link */
-.extra-links {
-  margin-top: 15px;
-  font-size: 16px;
-}
-
-.extra-links a {
-  color: #ff6600; /* ✅ Kept orange for contrast */
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.extra-links a:hover {
-  text-decoration: underline;
-}
-
-.login-container {
-  width: 300px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-}
-
-input {
-  width: 100%;
-  padding: 8px;
-  margin: 10px 0;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: blue;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.error {
-  color: red;
-  font-size: 14px;
-}
-.extra-links p a {
-  color: #ff6600; /* Change this to any color you prefer */
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.extra-links p a:hover {
-  color: #ff3300; /* Slightly darker on hover */
-  text-decoration: underline;
-}
 
 .wishlist-container {
   max-width: 800px;
@@ -516,8 +410,8 @@ button {
 }
 
 .wishlist-item img {
-  width: 60px;
-  height: 60px;
+  width: 150px;
+  height: 150px;
   border-radius: 8px;
   object-fit: cover;
   margin-right: 15px;
@@ -525,7 +419,7 @@ button {
 
 .wishlist-item span {
   flex-grow: 1;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   text-align: left;
 }
@@ -590,8 +484,8 @@ button {
 }
 
 .purchase-item img {
-  width: 60px;
-  height: 60px;
+  width: 150px;
+  height: 150px;
   border-radius: 8px;
   object-fit: cover;
   margin-right: 15px;
@@ -599,95 +493,10 @@ button {
 
 .purchase-item span {
   flex-grow: 1;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   text-align: left;
 }
-.add-to-wishlist {
-  background-color: #DAA520; /* Change this to your preferred color */
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.add-to-wishlist:hover {
-  background-color: #daa520d3; /* Slightly darker shade on hover */
-}
-
-.forgot-password-container {
-  width: 350px;
-  margin: 50px auto;
-  padding: 25px;
-  background-color: #ff6600;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.forgot-password-container h2 {
-  color: #4b2e83;
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.forgot-password-container p {
-  font-size: 16px;
-  color: #333;
-}
-
-.forgot-password-container input {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-/* Forgot Password link */
-.forgot-password-link {
-  text-align: right;
-  margin-top: 5px;
-}
-
-.forgot-password-link a {
-  color: #ff6600; /* ✅ Change this to your preferred color */
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.forgot-password-link a:hover {
-  text-decoration: underline;
-  color: #cc5500; /* ✅ Slightly darker on hover */
-}
-
-.reset-btn {
-  width: 100%;
-  background-color: #4b2e83;
-  color: white;
-  font-size: 18px;
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.reset-btn:hover {
-  background-color: #371f61;
-}
-
-.reset-message {
-  color: green;
-  margin-top: 10px;
-  font-size: 14px;
-}
-
 
 
 /* Tablet View (600px and above) */
@@ -778,4 +587,23 @@ button {
       width: 60%;
   }
 
+}
+
+#purchase-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+#form {
+  padding: 0.5rem;
+  height: 800px;
+  width: 30rem;
+}
+
+#payment {
+  padding: 0.5rem;
+  width: 15em;
+  height: 300px;
 }
