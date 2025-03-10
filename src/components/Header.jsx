@@ -8,7 +8,6 @@ const Header = ({ loggedInUser, handleLogout }) => {
         <img src="img/USWAP_logo.png" alt="USWAP Logo" className="logo" />
         <h1>USWAP</h1>
       </div>
-
       <nav>
         <ul className="nav-links">
           <li><Link to="/">Home</Link></li>
