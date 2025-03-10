@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Accordion, Container } from 'react-bootstrap';
+
 
 const faqData = [
   { question: "How do I list an item?", answer: "Click on 'Add Item' in the navigation bar and fill in the required details." },
@@ -8,36 +10,18 @@ const faqData = [
 ];
 
 const FAQ = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
-
-  const toggleFAQ = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
   return (
-    <div className="faq-container">
-      <h2 className="faq-title">Frequently Asked Questions</h2>
-      <div className="faq-list">
+    <Container className="mt-5">
+      <h2 className="text-center mb-3">Frequently Asked Questions</h2>
+      <Accordion>
         {faqData.map((faq, index) => (
-          <div key={index} className="faq-item">
-            <button 
-              className="faq-question" 
-              onClick={() => toggleFAQ(index)}
-              aria-expanded={activeIndex === index}
-            >
-              {faq.question}
-              <span className={`faq-icon ${activeIndex === index ? 'open' : ''}`}>▼</span>
-            </button>
-            <div
-              className={`faq-answer ${activeIndex === index ? 'show' : ''}`}
-              style={{ maxHeight: activeIndex === index ? '200px' : '0px' }}
-            >
-              <p>{faq.answer}</p>
-            </div>
-          </div>
+          <Accordion.Item eventKey={index.toString()} key={index}>
+            <Accordion.Header>{faq.question}</Accordion.Header>
+            <Accordion.Body>{faq.answer}</Accordion.Body>
+          </Accordion.Item>
         ))}
-      </div>
-    </div>
+      </Accordion>
+    </Container>
   );
 };
 

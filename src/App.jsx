@@ -7,7 +7,7 @@ import AddItem from './components/AddItem';
 import Purchase from './components/Purchase';
 import ItemDetail from "./components/ItemDetail";
 import LoginPage from "./components/LoginPage";
-import USWAPHomePage from "./components/USWAPHomePage"; // ✅ Import your homepage component
+import USWAPHomePage from "./components/USWAPHomePage";
 import SignupPage from "./components/SignupPage";
 import WishlistPage from "./components/WishlistPage";
 import PurchaseHistoryPage from "./components/PurchaseHistoryPage";
