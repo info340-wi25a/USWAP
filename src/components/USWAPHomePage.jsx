@@ -20,7 +20,7 @@ const USWAPHomePage = () => {
                 <Card.Body>
                   <Card.Title>Purchase History</Card.Title>
                   <Card.Text>View the previously purchased list of items.</Card.Text>
-                  <Link to="//purchase-history" className="uw-button">View Purchase History</Link>
+                  <Link to="/purchase-history" className="uw-button">View Purchase History</Link>
                 </Card.Body>
               </Card>
             </Col>
