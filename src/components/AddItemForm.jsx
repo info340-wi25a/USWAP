@@ -1,26 +1,27 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from "react";
+import { database, ref, push } from "../firebaseConfig"; // Import Firebase functions
+import { getApp } from "firebase/app";
+import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
 
 function AddItemForm() {
   const [formData, setFormData] = useState({
-    title: '',
-    price: '',
-    description: '',
-    condition: 'new',
-    category: 'electronics',
-    contact: '',
-    image: null
+    title: "",
+    price: "",
+    description: "",
+    condition: "new",
+    category: "electronics",
+    contact: "",
+    image: null,
   });
 
   const [imagePreview, setImagePreview] = useState(null);
-  const fileInputRef = useRef(null); // Create a ref for the file input
+  const fileInputRef = useRef(null);
 
-  // Handles form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  // Handles image upload
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -29,30 +30,58 @@ function AddItemForm() {
     }
   };
 
-  // Handles form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Item Submitted:', formData);
-    alert('Item added successfully!');
 
-    // Reset the form fields
-    setFormData({
-      title: '',
-      price: '',
-      description: '',
-      condition: 'new',
-      category: 'electronics',
-      contact: '',
-      image: null
-    });
-
-    setImagePreview(null);
-
-    // Reset file input manually
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
+    if (!formData.image) {
+        alert("Please upload an image.");
+        return;
     }
-  };
+
+    try {
+        const storage = getStorage(getApp(), "gs://info340-media.firebasestorage.app"); 
+        const imagePath = `group-AB6/uploads/to/${formData.image.name}`;  //setting path for uploading image file to shared folder
+        const imageStorageRef = storageRef(storage, imagePath);
+
+        // Upload image
+        const uploadResult = await uploadBytes(imageStorageRef, formData.image);
+        const imageUrl = await getDownloadURL(uploadResult.ref);
+
+        // Store item details in database with image URL
+        const itemsRef = ref(database, "items");
+        await push(itemsRef, {
+            title: formData.title,
+            price: formData.price,
+            condition: formData.condition,
+            category: formData.category,
+            sellername: formData.sellername,
+            contact: formData.contact,
+            imageUrl: imageUrl, // Store the image URL instead of name
+        });
+
+        alert("Item added successfully!");
+
+        // Reset form
+        setFormData({
+            title: "",
+            price: "",
+            description: "",
+            condition: "new",
+            category: "electronics",
+            sellername: "",
+            contact: "",
+            image: null,
+        });
+
+        setImagePreview(null);
+        if (fileInputRef.current) {
+            fileInputRef.current.value = "";
+        }
+    } catch (error) {
+        console.error("Error adding item:", error);
+        alert("Failed to add item. Try again.");
+    }
+};
 
   return (
     <div className="search-container">
@@ -62,9 +91,6 @@ function AddItemForm() {
 
         <label htmlFor="price">Price ($):</label>
         <input type="number" id="price" name="price" min="1" value={formData.price} onChange={handleChange} required />
-
-        <label htmlFor="description">Description:</label>
-        <textarea id="description" name="description" rows="4" value={formData.description} onChange={handleChange} required></textarea>
 
         <label htmlFor="condition">Condition:</label>
         <select id="condition" name="condition" value={formData.condition} onChange={handleChange} required>
@@ -87,6 +113,9 @@ function AddItemForm() {
           <option value="books">Books</option>
           <option value="other">Other</option>
         </select>
+
+        <label htmlFor="sellername">Seller's Name:</label>
+      <input type="text" id="sellername" name="sellername" value={formData.sellername} onChange={handleChange} required />
 
         <label htmlFor="contact">Contact Information:</label>
         <input type="text" id="contact" name="contact" placeholder="Enter phone number" value={formData.contact} onChange={handleChange} required />

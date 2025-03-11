@@ -27,40 +27,48 @@ const ItemDetail = () => {
 
     const handleAddToCart = () => {
         navigate("/purchase", { state: { item } });
-      };
+    };
 
     return (
         <div className="content-wrapper">
-            {/* 🔹 Item Card */}
-            <div className="form-card">
-                <div className="purchase-card">
-                    <img src={item.image} alt={item.title} className="item-image" />
-                    <div className="item-info">
-                        <h3 className="item-title">{item.title}</h3>
-                        <p className="item-price"><strong>Price:</strong> ${item.price}</p>
-                        <p className="item-category"><strong>Category:</strong> {item.category}</p>
-                        <p className="item-condition"><strong>Condition:</strong> {item.condition}</p>
-                        <p className="item-seller"><strong>Seller:</strong> {item.seller}</p>
-                        <p className="item-location"><strong>Location:</strong> {item.location}</p>
-                        <p className="item-description">{item.description}</p>
+            <div className="content-wr">
+                
+                {/* 🔹 About Section (Left Side) - Matches AddItem.jsx */}
+                <div className="listing-blurb">
+                    <h3>About This Item</h3>
+                    <p>
+                        Use this page to view detailed information about an item. If you're
+                        interested in purchasing, simply click the "Add to Cart" button to
+                        proceed.
+                    </p>
+                    <p>
+                        This marketplace helps students buy and sell items with ease. Ensure
+                        your item is accurately described to attract the right buyers.
+                    </p>
+                </div>
 
-                        {/* 🔹 "Add to Cart" Button - Now Works Properly! */}
-                        {/* 🔹 "Add to Cart" Button */}
-                        <button onClick={handleAddToCart} className="confirm">
-                            Add to Cart
-                        </button>
+                {/* 🔹 Item Details (Right Side) */}
+                <div className="search-container">
+                    <div className="form-card">
+                        <div className="purchase-card">
+                            <img src={item.image} alt={item.title} className="item-image" />
+                            <div className="item-info">
+                                <h3 className="item-title">{item.title}</h3>
+                                <p className="item-price"><strong>Price:</strong> ${item.price}</p>
+                                <p className="item-category"><strong>Category:</strong> {item.category}</p>
+                                <p className="item-condition"><strong>Condition:</strong> {item.condition}</p>
+                                <p className="item-seller"><strong>Seller:</strong> {item.seller}</p>
+                                <p className="item-location"><strong>Location:</strong> {item.location}</p>
+                                <p className="item-description">{item.description}</p>
+
+                                {/* 🔹 "Add to Cart" Button */}
+                                <button onClick={handleAddToCart} className="confirm">
+                                    Add to Cart
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            {/* 🔹 Additional Item Details */}
-            <div className="listing-blurb">
-
-            <div className="purchase-blurb">
-
-                <h2>About This Item:</h2>
-                <p>Use this page to view detailed information about an item. If you're interested in purchasing, simply click the "Add to Cart" button to proceed.</p>
-            </div>
 
             </div>
         </div>

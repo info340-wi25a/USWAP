@@ -27,18 +27,20 @@ const WishlistPage = () => {
         <p>Your wishlist is empty.</p>
       ) : (
         <ul className="wishlist-items">
-          {wishlist.map(item => (
-            <li key={item.id} className="wishlist-item">
-              <img src={item.image} alt={item.title} />
-              <span>{item.title} - ${item.price}</span>
-              <button onClick={() => removeFromWishlist(item.id)}>Remove</button>
-            </li>
-          ))}
-        </ul>
+  {wishlist.map(item => (
+    <li key={item.id} className="wishlist-item">
+      <img src={item.imageUrl || "img/default.jpg"} alt={item.title} />
+      <span>{item.title} - ${item.price}</span>
+      <button onClick={() => removeFromWishlist(item.id)}>Remove</button>
+    </li>
+  ))}
+</ul>
       )}
       {wishlist.length > 0 && <button onClick={clearWishlist} className="clear-wishlist">Clear Wishlist</button>}
     </div>
   );
 };
-
 export default WishlistPage;
+
+
+
