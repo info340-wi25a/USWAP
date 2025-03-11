@@ -18,9 +18,9 @@ const USWAPHomePage = () => {
             <Col>
               <Card>
                 <Card.Body>
-                  <Card.Title>Browse Items</Card.Title>
-                  <Card.Text>Find what you need from fellow Huskies.</Card.Text>
-                  <Link to="/listings" className="uw-button">Explore</Link>
+                  <Card.Title>Purchase History</Card.Title>
+                  <Card.Text>View the previously purchased list of items.</Card.Text>
+                  <Link to="//purchase-history" className="uw-button">View Purchase History</Link>
                 </Card.Body>
               </Card>
             </Col>
@@ -36,9 +36,9 @@ const USWAPHomePage = () => {
             <Col>
               <Card>
                 <Card.Body>
-                  <Card.Title>My Listings</Card.Title>
-                  <Card.Text>View and manage the items you've posted.</Card.Text>
-                  <Link to="/listings" className="uw-button">View Listings</Link>
+                  <Card.Title>Wishlist</Card.Title>
+                  <Card.Text>View the items your interested in.</Card.Text>
+                  <Link to="/wishlist" className="uw-button">View Wishlist</Link>
                 </Card.Body>
               </Card>
             </Col>
