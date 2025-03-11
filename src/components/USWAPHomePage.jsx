@@ -37,7 +37,7 @@ const USWAPHomePage = () => {
               <Card>
                 <Card.Body>
                   <Card.Title>Wishlist</Card.Title>
-                  <Card.Text>View the items your interested in.</Card.Text>
+                  <Card.Text>View the items you're interested in.</Card.Text>
                   <Link to="/wishlist" className="uw-button">View Wishlist</Link>
                 </Card.Body>
               </Card>
