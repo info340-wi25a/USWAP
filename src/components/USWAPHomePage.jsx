@@ -42,6 +42,15 @@ const USWAPHomePage = () => {
                 </Card.Body>
               </Card>
             </Col>
+            <Col>
+              <Card>
+                <Card.Body>
+                  <Card.Title>Browse</Card.Title>
+                  <Card.Text>Find what you need from fellow Huskies.</Card.Text>
+                  <Link to="/listings" className="uw-button">View Items</Link>
+                </Card.Body>
+              </Card>
+            </Col>
           </Row>
         </section>
         <FAQ />
