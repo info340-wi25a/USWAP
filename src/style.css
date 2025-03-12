@@ -15,16 +15,35 @@ h1, h2, h3 {
   color: #4b2e83;
 }
 
-.uw-button {
+.header-button {
   background-color: #B7A57A;
   color: #ffffff;
   border: none !important;
   padding: 8px 15px;
   font-weight: bold;
+  width: 100px;
 }
 
-.uw-button:hover {
-  background-color: #A38F61 !important;
+.login-button {
+  background-color: #005eff;
+  color: #ffffff;
+  border: none !important;
+  padding: 8px 15px;
+  font-weight: bold;
+  width: 100px;
+}
+
+.logout-button {
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none !important;
+  padding: 8px 15px;
+  font-weight: bold;
+  width: 100px;
+}
+
+.header-button:hover {
+  background-color: #60553c !important;
   color: white !important;
   text-decoration: none;
 }
