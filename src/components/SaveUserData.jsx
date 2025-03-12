@@ -1,5 +1,4 @@
 import { getDatabase, ref, set } from 'firebase/database';
-import { getAuth } from 'firebase/auth';
 
 const saveUserData = (user) => {
   const db = getDatabase();
@@ -10,6 +9,8 @@ const saveUserData = (user) => {
     email: user.email,
     profilePicture: user.photoURL,
     createdAt: new Date().toISOString(),
+    wishlist: [],
+    purchaseHistory: []
   })
     .then(() => {
       console.log('User data saved successfully!');
