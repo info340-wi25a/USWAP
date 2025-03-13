@@ -51,6 +51,9 @@ const Header = () => {
               <Button as={Link} to="/wishlist" className="header-button">
                 Wishlist
               </Button>
+              <Button as={Link} to="/purchase-history" className="header-button">
+                History
+              </Button>
               {user ? (
                 <Button onClick={handleLogout} className="logout-button">Logout</Button>
               ) : (

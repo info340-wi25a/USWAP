@@ -4,7 +4,7 @@ import PurchaseForm from '../components/PurchaseForm';
 
 function PurchasingPage() {
     const location = useLocation();
-    const item = location.state?.item; // ✅ Receive the passed item correctly
+    const item = location.state?.item;
 
     if (!item) {
         return <h2 style={{ textAlign: "center", marginTop: "20px" }}>No item selected for purchase.</h2>;
@@ -27,7 +27,6 @@ function PurchasingPage() {
                         </div>
                     </div>
 
-                    {/* ✅ Pass the correct item data to PurchaseForm */}
                     <PurchaseForm item={item} />
                 </div>
 
