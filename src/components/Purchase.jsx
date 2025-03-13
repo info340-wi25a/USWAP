@@ -1,6 +1,5 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import Footer from '../components/Footer';
 import PurchaseForm from '../components/PurchaseForm';
 
 function PurchasingPage() {
@@ -16,12 +15,15 @@ function PurchasingPage() {
             <div className='content-wrapper'>
                 <div className='form-card'>
                     <div className="purchase-card">
-                        {/* ✅ Display correct item image */}
-                        <img src={item.image} alt={item.title} className="item-image" />
+                        <img src={item.imageUrl} alt={item.title} className="item-image" />
                         <div className="item-info">
                             <h3 className="item-title">{item.title}</h3>
                             <p className="item-price"><strong>Price:</strong> ${item.price}</p>
-                            <p className="item-description">{item.description}</p>
+                            <p className="item-description"><strong>Description:</strong> {item.description || "No description available."}</p>
+                            <p className="item-category"><strong>Category:</strong> {item.category}</p>
+                            <p className="item-condition"><strong>Condition:</strong> {item.condition}</p>
+                            <p className="item-seller"><strong>Seller:</strong> {item.sellername}</p>
+                            <p className="item-contact"><strong>Contact:</strong> {item.contact}</p>
                         </div>
                     </div>
 
