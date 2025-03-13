@@ -210,30 +210,6 @@ button {
   margin: 0 auto;
 }
 
-.purchase-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1; /* Allows the card to expand */
-   /* Prevents it from stretching too much */
-  padding: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.purchase-blurb {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  padding: 15px;
-  margin: auto auto 50px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 .item-card {
   display: flex;
   flex-direction: column; /* Stack items vertically */
@@ -583,8 +559,6 @@ button[type="submit"] {
     padding: 20px; /* Add padding for spacing */
   }
 }
-
-
 
 
 .filter-box {

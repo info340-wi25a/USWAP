@@ -104,7 +104,7 @@ const ListingPage = () => {
                 {/* Buttons for adding to cart and wishlist, properly spaced */}
                 <div className="button-container">
                   <button onClick={(e) => handleAddToCart(item, e)} className="add-to-cart">
-                    Add to Cart
+                    Buy Now
                   </button>
 
                   <button onClick={(e) => { e.stopPropagation(); addToWishlist(item); }} className="add-to-wishlist">
