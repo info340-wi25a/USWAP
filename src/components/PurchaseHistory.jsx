@@ -16,7 +16,7 @@ const addToPurchaseHistory = async (item) => {
 
   try {
     const snapshot = await get(userPurchaseHistoryRef);
-    let purchaseHistory = snapshot.exists() ? snapshot.val() : [];
+    let purchaseHistory = snapshot.exists() ? Object.values(snapshot.val()) : [];
 
     if (!purchaseHistory.some((purchaseItem) => purchaseItem.id === item.id)) {
       purchaseHistory.push({
