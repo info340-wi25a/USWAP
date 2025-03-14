@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { getDatabase, ref, onValue, set, remove } from "firebase/database";
 import { getAuth } from "firebase/auth";
+import { useNavigate } from "react-router-dom"; 
 
 const WishlistPage = () => {
   const [wishlist, setWishlist] = useState([]);
   const auth = getAuth();
   const user = auth.currentUser;
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!user) return;
@@ -58,6 +60,11 @@ const WishlistPage = () => {
       });
   };
 
+  const handleAddToCart = (item, event) => {
+    event.stopPropagation(); 
+    navigate("/purchase", { state: { item } });
+  };
+
   return (
     <div className="wishlist-container">
       <h2>Your Wishlist</h2>
@@ -69,7 +76,12 @@ const WishlistPage = () => {
             <li key={item.id} className="wishlist-item">
               <img src={item.imageUrl} alt={item.title} />
               <span>{item.title} - ${item.price}</span>
+              <div className="button-container">
+              <button onClick={(e) => handleAddToCart(item, e)} className="add-to-cart button-primary">
+                    Buy Now
+              </button>
               <button onClick={() => removeFromWishlist(item.id)}>Remove</button>
+              </div>
             </li>
           ))}
         </ul>
