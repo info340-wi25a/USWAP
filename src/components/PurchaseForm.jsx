@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
+import addToPurchaseHistory from "./PurchaseHistory"; // Import the function
+
 
 function PurchaseForm({ item }) {
   const [formData, setFormData] = useState({
@@ -27,15 +29,19 @@ function PurchaseForm({ item }) {
     // Save purchased item in localStorage
     let purchasedItems = JSON.parse(localStorage.getItem("purchasedItems")) || [];
 
-    if (item && !purchasedItems.some(purchasedItem => purchasedItem.id === item.id)) {
-      purchasedItems.push(item);
-      localStorage.setItem("purchasedItems", JSON.stringify(purchasedItems));
+    if (!formData.name || !formData.email) {
+      alert("Please fill in your name and email.");
+      return;
     }
 
-    alert(`${item?.title} has been purchased!`);
-
-    // Redirect to Purchase History
-    navigate("/purchase-history");
+    try {
+      addToPurchaseHistory(item); // Save purchase to Firebase
+      alert(`${item?.title} has been purchased!`);
+      navigate("/purchase-history"); // Redirect to purchase history page
+    } catch (error) {
+      console.error("Error processing purchase:", error);
+      alert("Failed to process purchase. Please try again.");
+    }
   };
 
   return (

@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
-import { database, ref, push } from "../firebaseConfig"; // Import Firebase functions
 import { getApp } from "firebase/app";
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "firebase/storage";
+import { getDatabase, ref, get, push } from "firebase/database";
+import { useNavigate } from "react-router"; // Import useNavigate
 
 function AddItemForm() {
   const [formData, setFormData] = useState({
@@ -17,7 +18,8 @@ function AddItemForm() {
   const [imagePreview, setImagePreview] = useState(null);
   const fileInputRef = useRef(null);
 
-  const handleChange = (e) => {
+  
+    function handleChange (e) {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -30,16 +32,42 @@ function AddItemForm() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const navigate = useNavigate();
+
+  async function handleSubmit (e)  {
     e.preventDefault();
 
     if (!formData.image) {
         alert("Please upload an image.");
         return;
     }
+    
+  
 
     try {
+      const database = getDatabase();
+      const itemsRef = ref(database, "items");
+
+      // Fetch existing items to check for duplicates
+      const snapshot = await get(itemsRef);
+      if (snapshot.exists()) {
+          const items = snapshot.val();
+          const duplicateItem = Object.values(items).find(
+              (item) =>
+                  item.title.toLowerCase() === formData.title.toLowerCase() &&
+                  item.category === formData.category &&
+                  item.sellername === formData.sellername
+          );
+
+          if (duplicateItem) {
+              alert("You have already listed this item for sale. The same Item cannot be added to the listing page.");
+              // Reset form
+            resetForm ();
+              return;
+          }
+      }
         const storage = getStorage(getApp(), "gs://info340-media.firebasestorage.app"); 
+        
         const imagePath = `group-AB6/uploads/to/${formData.image.name}`;  //setting path for uploading image file to shared folder
         const imageStorageRef = storageRef(storage, imagePath);
 
@@ -48,7 +76,7 @@ function AddItemForm() {
         const imageUrl = await getDownloadURL(uploadResult.ref);
 
         // Store item details in database with image URL
-        const itemsRef = ref(database, "items");
+       
         await push(itemsRef, {
             title: formData.title,
             price: formData.price,
@@ -60,8 +88,10 @@ function AddItemForm() {
         });
 
         alert("Item added successfully!");
-
+        resetForm();
+        navigate("/listings");
         // Reset form
+        function resetForm() {
         setFormData({
             title: "",
             price: "",
@@ -77,6 +107,9 @@ function AddItemForm() {
         if (fileInputRef.current) {
             fileInputRef.current.value = "";
         }
+      }
+
+        
     } catch (error) {
         console.error("Error adding item:", error);
         alert("Failed to add item. Try again.");

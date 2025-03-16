@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router";
+import { useNavigate } from "react-router-dom"; 
 import { getDatabase, ref, onValue } from "firebase/database";
-
-const ListingPage = () => {
+import addToWishlist from "./WishList";
+const ListingPage = () =>{
+//function ListingPage  ()  {
   const [searchQuery, setSearchQuery] = useState("");
   const [category, setCategory] = useState("all");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [items, setItems] = useState([]); // State for storing fetched items
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const database = getDatabase();
@@ -28,29 +31,6 @@ const ListingPage = () => {
     });
   }, []);
 
-  
-  const addToWishlist = (item) => {
-    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
-
-    if (!wishlist.some((wishItem) => wishItem.id === item.id)) {
-        wishlist.push({
-            id: item.id,
-            title: item.title,
-            price: item.price,
-            condition: item.condition,
-            imageUrl: item.imageUrl || "img/default.jpg", // Ensure correct image URL
-        });
-
-        localStorage.setItem("wishlist", JSON.stringify(wishlist));
-        alert(`${item.title} added to wishlist!`);
-        window.location.href = "/wishlist";
-    } else {
-        alert(`${item.title} is already in your wishlist!`);
-        window.location.href = "/wishlist";
-    }
-};
-
-
   // Filtering Logic
   const filteredItems = items.filter((item) => {
     const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase());
@@ -61,16 +41,22 @@ const ListingPage = () => {
     return matchesSearch && matchesCategory && matchesMinPrice && matchesMaxPrice;
   });
 
+  // Function to handle "Add to Cart" button click, navigates to purchase page
+  const handleAddToCart = (item, event) =>  {
+    event.stopPropagation(); 
+    navigate("/purchase", { state: { item } });
+  };
+
   return (
     <div className="content-wrapper">
       <div className="content-wr">
         <div className="listing-blurb">
           <h3>About the Listing Page</h3>
           <p>Browse a variety of items listed by college students just like you. Whether you're looking for textbooks, furniture, or electronics, our listing page helps you find what you need at great prices.
-        Use the search and filter options to quickly locate items that fit your needs. Once you find an item, click on it and it will take you to the add to cart page. Once you decide to buy the item, you can buy it through buying page.
-        </p>
-        <p>Our platform is designed to make buying and selling easy and convenient for students. Listings are constantly updated, ensuring a fresh selection of items at affordable prices.
-        By using this marketplace, you're not only finding great deals but also contributing to a sustainable student community where resources are shared and reused.</p>
+            Use the search and filter options to quickly locate items that fit your needs. Once you find an item, click "Add to Cart" to proceed to purchase.
+          </p>
+          <p>Our platform is designed to make buying and selling easy and convenient for students. Listings are constantly updated, ensuring a fresh selection of items at affordable prices.
+            By using this marketplace, you're not only finding great deals but also contributing to a sustainable student community where resources are shared and reused.</p>
         </div>
 
         {/* Search & Filter Form */}
@@ -108,16 +94,22 @@ const ListingPage = () => {
         {filteredItems.length > 0 ? (
           filteredItems.map((item) => (
             <div className="item" key={item.id}>
-              <Link to={`/item/${item.id}`}>
-                <img src={item.imageUrl || "img/default.jpg"} alt={item.title} />
-              </Link>
+              <img src={item.imageUrl || "img/default.jpg"} alt={item.title} />
               <div className="info">
                 <div className="title">{item.title}</div>
                 <div className="price">${item.price}</div>
-                <div className="condition">Condition: {item.condition}</div>
-                <button onClick={() => addToWishlist(item)} className="add-to-wishlist">
-                  Add to Wishlist
-                </button>
+                <div className="condition"><strong>Condition:</strong> {item.condition}</div>
+
+                {/* Buttons for adding to cart and wishlist, properly spaced */}
+                <div className="button-container">
+                  <button onClick={(e) => handleAddToCart(item, e)} className="add-to-cart">
+                    Buy Now
+                  </button>
+                  <button onClick={() => addToWishlist(item)} className="add-to-wishlist">
+                 {/* <button onClick={(e) => addToWishlist(item)} className="add-to-wishlist">  */}
+                                Add to Wishlist
+                  </button>
+                </div>
               </div>
             </div>
           ))
