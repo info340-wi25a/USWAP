@@ -15,7 +15,7 @@ function PurchasingPage() {
         <Container className="mt-4 mb-5">
             <Row className="justify-content-center">
                 <Col md={8}>
-                    <Card className="shadow-sm p-3 mb-4">
+                    <Card className="p-3 mb-4">
                         <Row className="g-3">
                             <Col xs={12} md={4} className="d-flex align-items-center justify-content-center">
                                 <Image src={item.imageUrl} alt={item.title} fluid rounded />
