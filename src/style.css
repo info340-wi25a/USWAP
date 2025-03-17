@@ -53,6 +53,21 @@ h1, h2, h3 {
     justify-content: center;
 }
 
+.alert-button {
+  background-color: #A9A9A9 !important; /* Purple background */
+    color: #00008B !important; /*  text */
+    border: none !important;
+    padding: 10px 20px; /* Ensure equal padding */
+    font-weight: bold;
+    width: 100%; /* Make buttons full width inside cards */
+    text-align: center; /* Center text */
+    display: inline-block; /* Ensures proper alignment */
+    border-radius: 8px; /* Rounded edges */
+    transition: background-color 0.3s;
+    width: 250px;
+    justify-content: center;
+}
+
 .shadow-sm {
   background-color: #4B2E83;
 }

@@ -53,9 +53,9 @@ const ListingPage = () =>{
         <div className="listing-blurb">
           <h3>About the Listing Page</h3>
           <p>Browse a variety of items listed by college students just like you. Whether you're looking for textbooks, furniture, or electronics, our listing page helps you find what you need at great prices.
-            Use the search and filter options to quickly locate items that fit your needs. Once you find an item, click "Add to Cart" to proceed to purchase.
-          </p>
-          <p>Our platform is designed to make buying and selling easy and convenient for students. Listings are constantly updated, ensuring a fresh selection of items at affordable prices.
+            Use the search and filter options to quickly locate items that fit your needs. Once you find an item, click "Buy Now" to proceed to purchase.You  can add interested items to Wishlist
+            by clicking "Add to WishList" and purchase it later.</p>
+          <p>Our platform is designed to make buying and selling easy and convenient for students. Listings are constantly updated, ensuring  a   fresh selection  of items at affordable prices.
             By using this marketplace, you're not only finding great deals but also contributing to a sustainable student community where resources are shared and reused.</p>
         </div>
 
