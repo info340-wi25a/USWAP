@@ -1,6 +1,6 @@
 # INFO 340 Project
 
-This repository contains code for an interactive information web app, created for the _Client-Side Web Development_ course at the UW iSchool.
+This is USWAP, an local buying and selling form exclusively for UW students. Browse items, search for them, add them to your wishlist, or purchase them!
 
 Group Member 1: Alex Chang
 
