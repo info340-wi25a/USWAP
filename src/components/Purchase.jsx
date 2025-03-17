@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import PurchaseForm from '../components/PurchaseForm';
 import { Container, Row, Col, Card, Image, Alert } from 'react-bootstrap';
 
-
 function PurchasingPage() {
     const location = useLocation();
     const item = location.state?.item;
@@ -25,7 +24,6 @@ function PurchasingPage() {
                                 <Card.Body>
                                     <Card.Title>{item.title}</Card.Title>
                                     <Card.Text><strong>Price:</strong> ${item.price}</Card.Text>
-                                    <Card.Text><strong>Description:</strong> {item.description || "No description available."}</Card.Text>
                                     <Card.Text><strong>Category:</strong> {item.category}</Card.Text>
                                     <Card.Text><strong>Condition:</strong> {item.condition}</Card.Text>
                                     <Card.Text><strong>Seller:</strong> {item.sellername}</Card.Text>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { getAuth } from 'firebase/auth'; // Import Firebase auth
 import addToPurchaseHistory from "./PurchaseHistory"; // Import the function
-
 
 function PurchaseForm({ item }) {
   const [formData, setFormData] = useState({
@@ -15,6 +15,8 @@ function PurchaseForm({ item }) {
   });
 
   const navigate = useNavigate();
+  const auth = getAuth();
+  const user = auth.currentUser; // Get the currently logged-in user
 
   // Handles form input changes
   const handleChange = (e) => {
@@ -26,18 +28,26 @@ function PurchaseForm({ item }) {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Save purchased item in localStorage
-    let purchasedItems = JSON.parse(localStorage.getItem("purchasedItems")) || [];
+    if (!user) {
+      alert("You need to be logged in to purchase an item.");
+      navigate("/login"); // Redirect to login page if not logged in
+      return;
+    }
 
     if (!formData.name || !formData.email) {
       alert("Please fill in your name and email.");
       return;
     }
 
+    if (formData.deliveryOption === 'shipping' && !formData.shippingAddress) {
+      alert("Please provide a shipping address.");
+      return;
+    }
+
     try {
       addToPurchaseHistory(item); // Save purchase to Firebase
       alert(`${item?.title} has been purchased!`);
-      navigate("/purchase-history"); // Redirect to purchase history page
+      navigate("/purchase-history"); // Redirect to purchase history page if purchase is successful
     } catch (error) {
       console.error("Error processing purchase:", error);
       alert("Failed to process purchase. Please try again.");
@@ -68,20 +78,17 @@ function PurchaseForm({ item }) {
           <option value="shipping">Shipping</option>
         </select>
 
-        {formData.deliveryOption === 'shipping' && (
-          <>
-            <label htmlFor="shippingAddress">Shipping Address:</label>
-            <input 
-              type="text" 
-              id="shippingAddress" 
-              name="shippingAddress" 
-              placeholder="Enter your shipping address" 
-              value={formData.shippingAddress} 
-              onChange={handleChange} 
-              required
-            />
-          </>
-        )}
+        <label htmlFor="shippingAddress">Shipping Address:</label>
+        <input 
+          type="text" 
+          id="shippingAddress" 
+          name="shippingAddress" 
+          placeholder="Enter your shipping address" 
+          value={formData.shippingAddress} 
+          onChange={handleChange} 
+          required={formData.deliveryOption === 'shipping'}
+          disabled={formData.deliveryOption !== 'shipping'}
+        />
 
         <label htmlFor="additionalNotes">Additional Notes (Optional):</label>
         <textarea id="additionalNotes" name="additionalNotes" rows="4" value={formData.additionalNotes} onChange={handleChange}></textarea>
