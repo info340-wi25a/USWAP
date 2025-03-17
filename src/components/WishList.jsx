@@ -1,7 +1,7 @@
 import { getDatabase, ref, get, set,push } from "firebase/database";
 import { getAuth } from "firebase/auth";
 
-   async function addToWishlist(item) {
+  async function addToWishlist(item) {
     const auth = getAuth();
   const user = auth.currentUser;
 
@@ -30,8 +30,12 @@ import { getAuth } from "firebase/auth";
       }
     }
 
-    // If item doesn't exist, add it to the wishlist
-    await push(wishlistRef, item);
+    const newItemRef = push(wishlistRef);
+    const newItemKey = newItemRef.key;
+
+    // Store the item with its Firebase-generated key as `id`
+    await set(newItemRef, { ...item, id: newItemKey });
+
     alert("Item added to wishlist!");
   } 
    catch (error) {

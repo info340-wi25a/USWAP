@@ -13,6 +13,7 @@ const addToPurchaseHistory = async (item) => {
   const db = getDatabase();
   const userPurchaseHistoryRef = ref(db, `users/${user.uid}/purchaseHistory`);
   const itemRef = ref(db, `items/${item.id}`);
+  const userWishlistRef = ref (db, `users/${user.uid}/wishlist/${item.id}`)
 
   try {
     const snapshot = await get(userPurchaseHistoryRef);
@@ -31,6 +32,8 @@ const addToPurchaseHistory = async (item) => {
       // Update the purchaseHistory in Firebase
       await set(userPurchaseHistoryRef, purchaseHistory);
 
+
+      await remove(userWishlistRef);
       await remove(itemRef);
     }
 
