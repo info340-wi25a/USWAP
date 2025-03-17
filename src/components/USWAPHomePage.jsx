@@ -24,7 +24,7 @@ const USWAPHomePage = () => {
     <div>
       <Container className="my-4 p-4 rounded">
         <section>
-        <h2>Welcome to USWAP {user ? `, ${user.displayName }` : ""}!</h2>
+        <h2>Welcome to USWAP{user ? `, ${user.displayName }` : ""}!</h2>
         <p>Connect with other UW students to exchange books, furniture, gadgets, and more in a safe and easy-to-use platform.</p>
         </section>
         {user ? (
@@ -34,7 +34,7 @@ const USWAPHomePage = () => {
           <p>Please login by clicking the login button above to add interested items to "Wishlist", view Wishlist, "Purchase" an item or view Purchase History.</p>
         )}
         <section>
-          <Row className="justify-content-center g-4" xs={1} sm={2} md={3}>
+          <Row className="justify-content-center g-4" xs={1} sm={2} md={2}>
             <Col>
             <Card className="container-card">
                 <Card.Body>
@@ -62,7 +62,7 @@ const USWAPHomePage = () => {
                   <Link to="/wishlist" className="uw-button">View Wishlist</Link>
                 ) : (
                   <Button
-                    className="alert-button"
+                    className="uw-button"
                     onClick={() => alert("You must be logged in to view your Wishlist. Click \"Login button\" in the header to login")}
                   >
                     View Wishlist
@@ -75,15 +75,15 @@ const USWAPHomePage = () => {
               <Card className="container-card">
                 <Card.Body>
                   <Card.Title>Purchase History</Card.Title>
-                  <Card.Text>View the previously purchased list of items.</Card.Text>
+                  <Card.Text>View your previously purchased items.</Card.Text>
                   {user ? (
-                    <Link to="/purchase-history" className="uw-button">View Purchase History</Link>
+                    <Link to="/purchase-history" className="uw-button">Purchase History</Link>
                   ) : (
                     <Button
-                      className="alert-button"
+                      className="uw-button"
                       onClick={() => alert("You must be logged in to view your Purchase History.Click \"Login button\" in the header to login")}
                     >
-                      View Purchase History
+                      Purchase History
                     </Button>
                   )}
                 </Card.Body>

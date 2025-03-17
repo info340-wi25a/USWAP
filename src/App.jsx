@@ -8,7 +8,6 @@ import Purchase from './components/Purchase';
 import ItemDetail from "./components/ItemDetail";
 import LoginPage from "./components/LoginPage";
 import USWAPHomePage from "./components/USWAPHomePage";
-import SignupPage from "./components/SignupPage";
 import WishlistPage from "./components/WishlistPage";
 import PurchaseHistoryPage from "./components/PurchaseHistoryPage";
 import ForgotPasswordPage from "./components/ForgotPasswordPage";
@@ -33,7 +32,6 @@ function App(props) {
         <Route path="/item/:id" element={<ItemDetail />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/signup" element={<SignupPage />} />
         <Route path="/wishlist" element={<WishlistPage />} />
         <Route path="/purchase-history" element={<PurchaseHistoryPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />

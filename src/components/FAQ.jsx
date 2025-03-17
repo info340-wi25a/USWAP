@@ -5,7 +5,6 @@ import { Accordion, Container } from 'react-bootstrap';
 const faqData = [
   { question: "How do I list an item?", answer: "Click on 'Add Item' in the navigation bar and fill in the required details." },
   { question: "Is this marketplace only for UW students?", answer: "Yes, USWAP is exclusive to University of Washington students." },
-  { question: "How do I contact a seller?", answer: "Each listing has a contact button that allows you to reach the seller directly." },
   { question: "Is there a transaction fee?", answer: "No, USWAP does not charge any transaction fees." }
 ];
 
