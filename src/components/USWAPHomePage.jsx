@@ -54,23 +54,41 @@ const USWAPHomePage = () => {
               </Card>
             </Col>
             <Col>
-              <Card className="container-card">
-                <Card.Body>
-                  <Card.Title>Wishlist</Card.Title>
-                  <Card.Text>View the items you're interested in.</Card.Text>
-                  <Link to="/wishlist" className="uw-button">View Wishlist</Link>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col>
             <Card className="container-card">
+              <Card.Body>
+                <Card.Title>Wishlist</Card.Title>
+                <Card.Text>View the items you're interested in.</Card.Text>
+                {user ? (
+                  <Link to="/wishlist" className="uw-button">View Wishlist</Link>
+                ) : (
+                  <Button
+                    className="alert-button"
+                    onClick={() => alert("You must be logged in to view your Wishlist.")}
+                  >
+                    View Wishlist
+                  </Button>
+                )}
+              </Card.Body>
+            </Card>
+          </Col>
+            <Col>
+              <Card className="container-card">
                 <Card.Body>
                   <Card.Title>Purchase History</Card.Title>
                   <Card.Text>View the previously purchased list of items.</Card.Text>
-                  <Link to="/purchase-history" className="uw-button">View Purchase History</Link>
+                  {user ? (
+                    <Link to="/purchase-history" className="uw-button">View Purchase History</Link>
+                  ) : (
+                    <Button
+                      className="alert-button"
+                      onClick={() => alert("You must be logged in to view your Purchase History.")}
+                    >
+                      View Purchase History
+                    </Button>
+                  )}
                 </Card.Body>
               </Card>
-            </Col>
+          </Col>
           </Row>
         </section>
         <FAQ />
