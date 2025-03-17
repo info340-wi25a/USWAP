@@ -1,5 +1,5 @@
 import { getAuth, EmailAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import { Container } from 'react-bootstrap';
+import { Container, Card } from 'react-bootstrap';
 import { useNavigate } from 'react-router';
 import saveUserData from './SaveUserData';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
@@ -26,7 +26,13 @@ const Login = () => {
 
   return (
     <Container className="my-4 p-4 rounded">
-      <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+      <Card className="my-4 p-4 rounded p-3 bg-light">
+        <Card.Body>
+          <h1>Logging In</h1>
+          <Card.Text>Logging in to USWAP allows you to purchase items, add items to your wishlist, and view your purchase history. Either sign in using a google account, or make an account with an email address.</Card.Text>
+          <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+        </Card.Body>
+      </Card>
     </Container>
   );
 };
