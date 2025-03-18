@@ -62,7 +62,7 @@ const USWAPHomePage = () => {
                   <Link to="/wishlist" className="uw-button">View Wishlist</Link>
                 ) : (
                   <Button
-                    className="uw-button"
+                    className="uw-button-caution"
                     onClick={() => alert("You must be logged in to view your Wishlist. Click \"Login button\" in the header to login")}
                   >
                     View Wishlist
@@ -80,7 +80,7 @@ const USWAPHomePage = () => {
                     <Link to="/purchase-history" className="uw-button">Purchase History</Link>
                   ) : (
                     <Button
-                      className="uw-button"
+                      className="uw-button-caution"
                       onClick={() => alert("You must be logged in to view your Purchase History.Click \"Login button\" in the header to login")}
                     >
                       Purchase History
